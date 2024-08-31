@@ -111,20 +111,20 @@ print([10, 12, 31, 14] == [14, 10, 31, 12])
 
 
 ###### Dynamic List ######
-b = ['data', 'and', 'book', 'structure', 'hello', 'st']
+b = [1,2,3,4,5,6,7,8]
 
 b += [32]
 print(b)
-#['data', 'and', 'book', 'structure', 'hello', 'st', 32]
+#[1,2,3,4,5,6,7,8,32]
 
 
-b[2:3] = []
+b[1:2] = []
 print(b)
-#['data', 'and', 'structure', 'hello', 'st', 32]
+#[1,3,4,5,6,7,8,32]
 
 del b[0]
 print(b)
-#['and', 'structure', 'hello', 'st', 32]
+#[3,4,5,6,7,8,32]
 
 a = [2.2, 'python', 31, 14, 'data', False, 33.59]
 print(a)
@@ -140,13 +140,18 @@ print(a[-1])
 'learning'
 print(a[-5])
 'structures'
+print(a[-2])
+'happy'
 
 
 print(a[1:5])
-['structures', 'using']
+#['structures', 'using']
 
 print(a[-3:-1])
-['python', 'happy']
+#['python', 'happy']
+print(a[0:3])
+#['data','structures','using']
+print(a[0], a[2])
 
 ######### Mutable ####
 a = ['data', 'and', 'book', 'structure', 'hello', 'st']
@@ -156,6 +161,8 @@ a[1] = 1
 a[-1] = 120
 print(a)
 ['data', 1, 'book', 'structure', 'hello', 120]
+a[-2] = 'Let\'s go'
+print(a)
 
 a = ['data', 'and', 'book', 'structure', 'hello', 'st']
 
@@ -164,11 +171,14 @@ print(a[2:5])
 a[2:5] = [1, 2, 3, 4, 5]
 print(a)
 ['data', 'and', 1, 2, 3, 4, 5, 'st']
+a[0:8] = [1,2,3,4,10,18,23,5]
+print(a)
 
 ######### Other operators ####
 
 a = ['data', 'structures', 'using', 'python', 'happy', 'learning']
 print('data' in a)
+print('data' not in a)
 #True
 
 print(a)
@@ -241,10 +251,11 @@ Both are pointing to the same object
 ####### Example program to demonstrate the use of 'is not' operator
 Firstlist = []
 Secondlist = []
+
 if Firstlist is not Secondlist:
-  print("Both Firstlist and Secondlist variables are the same object")
+  print("Both Firstlist and Secondlist variables are not the same object")
 else:
-  print("Both Firstlist and Secondlist variables are not the same object") 
+  print("Both Firstlist and Secondlist variables are the same object") 
 
 #Output:
 # Both Firstlist and Secondlist variables are the same object
@@ -259,7 +270,7 @@ b = 132
 if a > 0 and b > 0:
   print("Both a and b are greater than zero")
 else:
-  print("At least one variable is less than 0") 
+  print("At least one variable is 0 or less") 
 
 #Output:
 #Both a and b are greater than zero
@@ -278,7 +289,7 @@ else:
 #At least one variable is greater than zero
 
 
-########## Example program to demonstrate the use of 'or' operator
+########## Example program to demonstrate the use of 'not' operator
 a = 32
 if not a:
   print("Boolean value of a is False")
@@ -345,18 +356,18 @@ print(len(person))
 #4
 
 mydict = {'a': 1, 'b': 2, 'c': 3}
-print(mydict)
+#print(mydict)
 #{'a': 1, 'b': 2, 'c': 3}
-mydict.clear()
-print(mydict)
+#mydict.clear()
+#print(mydict)
 #{}
 
-'''
-mydict.get('b')
-print(mydict)
+
+b = mydict.get('b')
+print(b)
 #2
-mydict.get('z')
-print(mydict)
+z = mydict.get('z')
+print(z)
 #None
 
 print(list(mydict.items()))
@@ -379,11 +390,16 @@ print(mydict)
 #{'a': 1, 'b': 2}
 d1 = {'a': 10, 'b': 20, 'c': 30}
 d2 = {'b': 200, 'd': 400}
+d3 = {'a': 1, 'b': 2, 'c': 5}
+d4 = {'d': 10, 'e': 18}
+
+d3.update(d4)
+print(d3)
 
 print(d1.update(d2))
 print(d1)
 #{'a': 10, 'b': 200, 'c': 30, 'd': 400}
-'''
+
 
 
 ############## SETS #############
