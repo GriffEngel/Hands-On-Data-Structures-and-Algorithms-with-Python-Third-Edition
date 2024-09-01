@@ -395,6 +395,7 @@ d4 = {'d': 10, 'e': 18}
 
 d3.update(d4)
 print(d3)
+#{'a': 1, 'b': 200, 'c': 30, 'd': 400}
 
 print(d1.update(d2))
 print(d1)
